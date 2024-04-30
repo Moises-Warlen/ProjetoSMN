@@ -10,12 +10,14 @@
 
 <form asp-controller="Tarefa" asp-action="Criar" method="post" data-id="">
     <div class="mb-3">
-        @*<span> Selecione o Funcionario</span>
-        <select id="dropdown">
-            <option value="opcao1">Moises</option>
-            <option value="opcao2">Douglas</option>
-            <option value="opcao3">Marina</option>
-        </select>*@
+        <select asp-for="Responsavel" class="form-control">
+            <option value="0">Selecione o Responsável</option>
+            @foreach (var funcionario in Model.Funcionarios)
+            {
+                <option value="@funcionario.Nome">@funcionario.Nome</option>
+
+            }
+        </select>
     </div>
     <div class="mb-3">
         <label for="descricao" class="form-label">Descrição da tarefa</label>
@@ -29,7 +31,7 @@
 
     <div class="mb-3">
         <label for="dataconclusao" class="form-label">Data da conclusão da tarefa</label>
-        <input type="text"  asp-for="DataConclusao" class="form-control" placeholder="Data de conclusão da tarefa">
+        <input type="text" asp-for="DataConclusao" class="form-control" placeholder="Data de conclusão da tarefa">
     </div>
 
     <button type="submit" class="btn btn-success btn-block">Adicionar</button>

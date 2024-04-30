@@ -2,20 +2,20 @@
 using DesafioSMN.MVC.Filters;
 using DesafioSMN.MVC.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DesafioSMN.MVC.Controllers
 {
     [PaginaParafuncionarioLogado]
     public class TarefaController : Controller
     {
+        private readonly IFuncionarioRepositorio _funcionarioRepositorio;
+
         private readonly ITarefaRepositorio _tarefaRepositorio;
-        public TarefaController(ITarefaRepositorio tarefaRepositorio)
+        public TarefaController(ITarefaRepositorio tarefaRepositorio , IFuncionarioRepositorio funcionarioRepositorio)
         {
             _tarefaRepositorio = tarefaRepositorio;
+            _funcionarioRepositorio = funcionarioRepositorio;
         }
         public IActionResult Index()
         {
@@ -26,7 +26,16 @@ namespace DesafioSMN.MVC.Controllers
         public IActionResult Criar()
         {
 
-            return View();
+            var tarefaModel = new TarefaModel();
+            tarefaModel.Funcionarios = _funcionarioRepositorio.BuscarTodos(); // Obtém todos os funcionários e atribui à propriedade Funcionarios do modelo de tarefa
+            return View(tarefaModel); // Passa o modelo de tarefa para a view Criar
+
+
+
+
+            //var funcionarios = _funcionarioRepositorio.BuscarTodos();
+
+            //return View(funcionarios);
         }
         public IActionResult Editar(int id)
         {
