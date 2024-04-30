@@ -66,7 +66,6 @@ namespace DesafioSMN.MVC.Controllers
             _tarefaRepositorio.Atualizar(tarefa);
             return RedirectToAction("Index");
         }
-
        
     }
 }

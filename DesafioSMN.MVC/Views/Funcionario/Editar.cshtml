@@ -1,5 +1,4 @@
-﻿
-@using DesafioSMN.MVC.ViewModels
+﻿@using DesafioSMN.MVC.ViewModels
 @model FuncionarioViewModel
 @{
     ViewData["Title"] = "Editar Funcionario";
@@ -7,11 +6,11 @@
 
 <div class="text-center">
 
-    <h1 class="display-4">Editr Funcionario</h1>
+    <h1 class="display-4">Editar Funcionario</h1>
 
 </div>
 
-<form asp-controller="Funcionario" asp-action="Criar" method="post" enctype="multipart/form-data">
+<form asp-controller="Funcionario" asp-action="Alterar" method="post" enctype="multipart/form-data">
 
     <div class="mb-3">
         <label for="funcionario" class="form-label">Nome Completo</label>
@@ -29,7 +28,7 @@
             }
         </select>
     </div>
-      
+
     <div class="mb-3">
         <label for="celular" class="form-label">Celular</label>
         <input type="text" asp-for="Celular" class="form-control" placeholder="Digite o Celular">
@@ -58,7 +57,6 @@
         <input type="datetime" asp-for="DataNascimento" class="form-control" placeholder="Data de nascimento">
     </div>
 
-
     <div class="mb-3">
         <label class="form-label">Foto</label>
         <input type="file" id="ImageFile" name="foto" asp-for="Foto" class="form-control" placeholder="insira sua foto">
@@ -86,10 +84,11 @@
         <input type="text" asp-for="Cep" class="form-control" placeholder="insira seu cep">
     </div>
 
-    <button type="submit" class=" btn btn-success btn-block"> Adcionar</button>
+    <button type="submit" class=" btn btn-success btn-block"> Editar</button>
     <a class="btn btn-outline-secondary btn-block" asp-controller="Funcionario" asp-action="Index">Voltar</a>
 
 </form>
+
 
 
 

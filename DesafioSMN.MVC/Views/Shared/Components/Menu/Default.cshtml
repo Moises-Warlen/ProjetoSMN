@@ -15,10 +15,15 @@
             <a class="nav-link text-dark" asp-area="" asp-controller="Tarefa" asp-action="Index">Tarefas</a>
 
         </li>
-        <li>
-            <a class="nav-link text-dark" asp-area="" asp-controller="Funcionario" asp-action="Index">Funcionarios</a>
 
-        </li>
+        @if (Model.Perfil == DesafioSMN.Dominio.Enums.PerfilEmun.Admin)
+        {
+            <li>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Funcionario" asp-action="Index">Funcionarios</a>
+
+            </li>
+        }
+
         <li>
             <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Sair">Sair</a>
 
