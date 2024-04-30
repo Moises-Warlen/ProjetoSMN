@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DesafioSMN.Infra.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    [Migration("20240430115941_CriandoBanco")]
-    partial class CriandoBanco
+    [Migration("20240430164552_CriandoDB_AjustandoAsTabelas")]
+    partial class CriandoDB_AjustandoAsTabelas
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

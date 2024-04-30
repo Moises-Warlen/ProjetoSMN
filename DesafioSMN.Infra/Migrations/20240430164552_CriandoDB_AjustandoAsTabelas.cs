@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DesafioSMN.Infra.Migrations
 {
-    public partial class CriandoBanco : Migration
+    public partial class CriandoDB_AjustandoAsTabelas : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

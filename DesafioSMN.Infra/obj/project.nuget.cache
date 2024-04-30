@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a4lVT+jaiLEpBqtYX51aMwCekJsQrPjMmAWW62NFMenlHKOtyaDUpPu8hDr2FdFWvgZMKNn1aCXdExD2aYUJIg==",
+  "dgSpecHash": "0M7o+UhwdOCgTHQHPz6AQPau4IkIMnciHDmHrDxq/JS/0UE23oxP7zAuKPo9F/CagS0+MdL/EBu0zPElQviXdw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Moises\\Desktop\\DesafioSMN_Refatorado\\DesafioSMN.Infra\\DesafioSMN.Infra.csproj",
+  "projectFilePath": "C:\\Users\\Moises\\Desktop\\moises\\DesafioSMN\\DesafioSMN.Infra\\DesafioSMN.Infra.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Moises\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

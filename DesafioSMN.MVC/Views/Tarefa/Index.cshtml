@@ -6,7 +6,7 @@
 
 <div class="text-center">
     <div class="d-grig gap-2 d-md-flex justify-content-md-start">
-        <a class="btn btn-primary" role="button" asp-controller="Tarefa" asp-action="Criar">Adicionar Nova Tarefa </a>
+        <a class="btn btn-success" role="button" asp-controller="Tarefa" asp-action="Criar">Adicionar Nova Tarefa </a>
     </div>
     <br />
 
@@ -16,7 +16,6 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Funcionário</th>
                 <th scope="col">Descrição</th>
                 <th scope="col">Data Cadastro</th>
                 <th scope="col">Data  Entrega</th>
@@ -38,7 +37,7 @@
                         <td>@tarefa.DataConclusao</td>
                         <td>
                             <div class="btn-group" role="group">
-                                <a role="button" class="btn btn-primary"asp-route-id="@tarefa.Id" asp-controller="Tarefa" asp-action="Editar">Editar</a>
+                                <a role="button" class="btn btn-success"asp-route-id="@tarefa.Id" asp-controller="Tarefa" asp-action="Editar">Editar</a>
                                 &nbsp
                                 <a class="btn btn-danger btn-block " asp-route-id="@tarefa.Id" role="button" asp-controller="Tarefa" asp-action="ApagarConfirmacao">Apagar</a>
                             </div>
