@@ -1,4 +1,5 @@
-﻿using DesafioSMN.Dominio.Model;
+﻿using DesafioSMN.Dominio.Enums;
+using DesafioSMN.Dominio.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -7,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace DesafioSMN.MVC.Filters
 {
-    public class PaginaParafuncionarioLogado : ActionFilterAttribute
+    public class PaginaRestritaSomenteAdmin : ActionFilterAttribute
     {
 
         public override void OnActionExecuted(ActionExecutedContext context)
@@ -24,6 +25,11 @@ namespace DesafioSMN.MVC.Filters
                 if (funcionario == null)
                 {
                     context.Result = new RedirectToRouteResult(new RouteValueDictionary { { "controller", "login" }, { "action", "Index" } });
+
+                }
+                if(funcionario.Perfil != PerfilEmun.Admin)
+                {
+                    context.Result = new RedirectToRouteResult(new RouteValueDictionary { { "controller", "Restrito" }, { "action", "Index" } });
 
                 }
             }

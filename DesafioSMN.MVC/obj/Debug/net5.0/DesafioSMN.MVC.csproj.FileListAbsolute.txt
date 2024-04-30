@@ -3604,3 +3604,4 @@ C:\Users\Moises\Desktop\moises\DesafioSMN\DesafioSMN.MVC\obj\Debug\net5.0\Desafi
 C:\Users\Moises\Desktop\moises\DesafioSMN\DesafioSMN.MVC\obj\Debug\net5.0\ref\DesafioSMN.MVC.dll
 C:\Users\Moises\Desktop\moises\DesafioSMN\DesafioSMN.MVC\obj\Debug\net5.0\DesafioSMN.MVC.pdb
 C:\Users\Moises\Desktop\moises\DesafioSMN\DesafioSMN.MVC\obj\Debug\net5.0\DesafioSMN.MVC.genruntimeconfig.cache
+C:\Users\Moises\Desktop\moises\DesafioSMN\DesafioSMN.MVC\obj\Debug\net5.0\Razor\Views\Restrito\Index.cshtml.g.cs

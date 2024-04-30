@@ -9,7 +9,7 @@ using System.IO;
 
 namespace DesafioSMN.MVC.Controllers
 {
-    [PaginaParafuncionarioLogado]
+    [PaginaRestritaSomenteAdmin]
     public class FuncionarioController : Controller
     {
         private readonly IFuncionarioRepositorio _funcionarioRepositorio;
