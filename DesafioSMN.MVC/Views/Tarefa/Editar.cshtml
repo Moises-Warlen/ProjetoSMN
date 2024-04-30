@@ -1,0 +1,42 @@
+﻿@model TarefaModel 
+@{
+    ViewData["Title"] = "Editar Tarefa";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Editar  Tarefa</h1>
+
+</div>
+
+<form asp-controller="Tarefa" asp-action="Alterar" method="post" data-id="">
+
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        @*<span> Selecione o Funcionario</span>
+            <select id="dropdown">
+                <option value="opcao1">Moises</option>
+                <option value="opcao2">Douglas</option>
+                <option value="opcao3">Marina</option>
+            </select>*@
+       
+    </div>
+    <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição da tarefa</label>
+        <input type="text" asp-for="Descricao" class="form-control" placeholder="Digite a descrição da tarefa">
+    </div>
+
+    <div class="mb-3">
+        <label for="dataatribuicao" class="form-label">Data do casdatro da tarefa</label>
+        <input type="text" asp-for="DataAtribuicao" class="form-control" placeholder="Digite a Data de casdastro da tarefa">
+    </div>
+
+    <div class="mb-3">
+        <label for="dataconclusao" class="form-label">Data da conclusão da tarefa</label>
+        <input type="text" asp-for="DataConclusao" class="form-control" placeholder="Data de conclusão da tarefa">
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Alterar</button>
+    <a class="btn btn-outline-secondary btn-block" asp-controller="Tarefa" asp-action="Index">Voltar</a>
+
+</form>

@@ -1,0 +1,72 @@
+﻿@using DesafioSMN.MVC.ViewModels
+
+@model List<FuncionarioViewModel>
+@{
+    ViewData["Title"] = "Listagem de Funcionarios";
+}
+
+<div class="text-lg-center">
+    <div class="d-grig gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-success" role="button" asp-controller="Funcionario" asp-action="Criar">Adicionar Novo Funcionario </a>
+    </div>
+    <br />
+    <h1>Listagem de Funcionarios</h1>
+
+    <table class="table table-hover" id="table-tarefas">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Funcionário</th>
+                <th scope="col">Gestor</th>
+                <th scope="col">Login </th>
+                <th scope="col">Celular </th>
+                <th scope="col">Email </th>
+                <th scope="col">Perfil</th>
+                <th scope="col">Data_Nascimento</th>
+                <th scope="col">Foto </th>
+                <th scope="col">Cidade</th>
+                <th scope="col">Bairro</th>
+                <th scope="col">Rua</th>
+                <th scope="col">Numero</th>
+                <th scope="col">Cep</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (FuncionarioViewModel funcionario in Model)
+                {
+                    <tr>
+
+                        <td>
+                            <div>
+                                <label for="ImageFile">
+                                    <img id="img" src="~/imagens/@funcionario.NomeFoto  " style="width:90px ;height:90px; " />
+                                </label>
+                            </div>
+                        </td>
+                        <td>@funcionario.Nome</td>
+                        <td>@funcionario.Gestor_FuncionarioId</td>
+                        <td>@funcionario.Celular</td>
+                        <td>@funcionario.Email</td>
+                        <td>@funcionario.Perfil</td>
+                        <td>@funcionario.DataNascimento</td>
+                        <td>@funcionario.Cidade</td>
+                        <td>@funcionario.Bairro</td>
+                        <td>@funcionario.Rua</td>
+                        <td>@funcionario.Numero</td>
+                        <td>@funcionario.Cep</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a role="button" class="btn btn-success" asp-route-id="@funcionario.Id" asp-controller="Funcionario" asp-action="Editar">Editar</a>
+                                &nbsp
+                                <a class="btn btn-danger btn-block " asp-route-id="@funcionario.Id" role="button" asp-controller="Funcionario" asp-action="ApagarConfirmacao">Apagar</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

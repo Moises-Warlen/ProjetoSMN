@@ -1,0 +1,24 @@
+﻿@using DesafioSMN.Dominio.Model
+@model LoginModel
+@{
+
+    Layout = "~/Views/Shared/_LayoutDeslogada.cshtml";
+    ViewData["Title"] = "Login";
+}
+<hr />
+
+<h1> Controle de Funcionario</h1>
+
+<form asp-controler="Login" asp-action="Entrar" method="post">
+    <div class="mb-3">
+        <label for="Email" class="form-label">Email</label>
+        <input type="text" asp-for="Login" class="form-control" id="login">
+
+    </div>
+    <div class="mb-3">
+        <label for="Senha" class="form-label">Senha</label>
+        <input type="password" asp-for="Senha" class="form-control" id="senha">
+    </div>
+    <br />
+    <button type="submit" class="btn btn-success btn-block ">Entrar</button>
+</form>
