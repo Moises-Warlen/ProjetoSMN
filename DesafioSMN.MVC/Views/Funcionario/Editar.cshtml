@@ -11,7 +11,7 @@
 </div>
 
 <form asp-controller="Funcionario" asp-action="Alterar" method="post" enctype="multipart/form-data">
-
+    <input type="hidden" name="Id" value="@Model.Id">
     <div class="mb-3">
         <label for="funcionario" class="form-label">Nome Completo</label>
 

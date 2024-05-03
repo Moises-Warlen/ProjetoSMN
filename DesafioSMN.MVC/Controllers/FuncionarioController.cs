@@ -55,21 +55,52 @@ namespace DesafioSMN.MVC.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        public IActionResult Criar(FuncionarioViewModel funcionario )
-        {
-            var funcionarioIncluido = _funcionarioRepositorio.Adicionar(funcionario);
-            var imagens = Path.Combine(_hostingEnvironment.WebRootPath, "imagens");
-            var caminho = Path.Combine(imagens, $"{funcionarioIncluido.Id}{Path.GetExtension(funcionario.Foto.FileName)}");
-            funcionario.Foto.CopyTo(new FileStream (caminho, FileMode.Create));
-            return RedirectToAction("Index");
 
+        public IActionResult Criar(FuncionarioViewModel funcionarioViewModel)
+        {
+            var funcionario = new FuncionarioModel
+            {
+                Nome = funcionarioViewModel.Nome,
+                // Atribuir outras propriedades necessárias
+            };
+
+            var funcionarioIncluido = _funcionarioRepositorio.Adicionar(funcionario);
+
+            if (funcionarioViewModel.Foto != null)
+            {
+                var imagens = Path.Combine(_hostingEnvironment.WebRootPath, "imagens");
+                var caminho = Path.Combine(imagens, $"{funcionarioIncluido.Id}{Path.GetExtension(funcionarioViewModel.Foto.FileName)}");
+                funcionarioViewModel.Foto.CopyTo(new FileStream(caminho, FileMode.Create));
+            }
+
+            return RedirectToAction("Index");
         }
-    
+
+        //public IActionResult Criar(FuncionarioViewModel funcionario )
+        //{
+        //    var funcionarioIncluido = _funcionarioRepositorio.Adicionar(funcionario);
+        //    var imagens = Path.Combine(_hostingEnvironment.WebRootPath, "imagens");
+        //    var caminho = Path.Combine(imagens, $"{funcionarioIncluido.Id}{Path.GetExtension(funcionario.Foto.FileName)}");
+        //    funcionario.Foto.CopyTo(new FileStream (caminho, FileMode.Create));
+        //    return RedirectToAction("Index");
+
+        //}
+
         public IActionResult Editar(int id)
         {
+
+            var funcionarios = _funcionarioRepositorio.BuscarTodos();
             FuncionarioModel funcionario = _funcionarioRepositorio.BuscarPorId(id);
-            return View(funcionario);
+            var funcionarioViewModel = new FuncionarioViewModel
+            {
+                Id = funcionario.Id,
+                Nome = funcionario.Nome,
+                // Adicione outras propriedades conforme necessário
+                Funcionarios = funcionarios
+            };
+            return View(funcionarioViewModel);
+            //FuncionarioModel funcionario = _funcionarioRepositorio.BuscarPorId(id);
+            //return View(funcionario);
         }
 
         [HttpPost]

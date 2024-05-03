@@ -13,14 +13,30 @@
 
     <input type="hidden" asp-for="Id" />
     <div class="mb-3">
-        <select asp-for="Responsavel" class="form-control">
+
+
+        <!-- Se a lista de funcionários não for nula e não estiver vazia, exiba a lista em um menu suspenso -->
+        @if (Model.Funcionarios != null && Model.Funcionarios.Any())
+        {
+            <select asp-for="Responsavel" class="form-control">
+                @foreach (var funcionario in Model.Funcionarios)
+                {
+                    <option value="@funcionario.Id">@funcionario.Nome</option>
+                }
+            </select>
+        }
+        else
+        {
+            <p>Não há funcionários disponíveis.</p>
+        }
+        @*<select asp-for="Responsavel" class="form-control">
             <option value="0">Selecione o Responsável</option>
             @foreach (var funcionario in Model.Funcionarios)
             {
                 <option value="@funcionario.Nome">@funcionario.Nome</option>
 
             }
-        </select>
+        </select>*@
     </div>
     <div class="mb-3">
         <label for="descricao" class="form-label">Descrição da tarefa</label>

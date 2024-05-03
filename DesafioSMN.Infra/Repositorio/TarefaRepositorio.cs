@@ -18,6 +18,7 @@ namespace DesafioSMN.Infra.Repositorio
             TarefaModel tarefaDB = ListarPorId(tarefa.Id);
 
             if (tarefaDB == null) throw new System.Exception("Houve um erro na atualização da tarefa!");
+           // tarefaDB.Responsavel = tarefa.Responsavel;
             tarefaDB.Descricao = tarefa.Descricao;
             //tarefaDB.DataAtribuicao = tarefa.DataAtribuicao;
             tarefaDB.DataConclusao = tarefa.DataConclusao;

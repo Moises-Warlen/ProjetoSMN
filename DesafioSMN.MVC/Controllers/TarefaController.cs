@@ -39,8 +39,22 @@ namespace DesafioSMN.MVC.Controllers
         }
         public IActionResult Editar(int id)
         {
-            TarefaModel tarefa = _tarefaRepositorio.ListarPorId(id);
-            return View(tarefa);
+
+            TarefaModel tarefa =_tarefaRepositorio.ListarPorId(id); // Suponha que você tenha uma função para obter a tarefa pelo ID
+            if (tarefa != null)
+            {
+                // Popule a lista de funcionários apenas se a tarefa existir
+                tarefa.Funcionarios = _funcionarioRepositorio.BuscarTodos(); // Suponha que você tenha uma função para obter os funcionários
+                return View(tarefa);
+            }
+            else
+            {
+                return NotFound(); // Ou qualquer outra ação apropriada se a tarefa não for encontrada
+            }
+
+
+            //TarefaModel tarefa = _tarefaRepositorio.ListarPorId(id);
+            //return View(tarefa);
         }
         public IActionResult ApagarConfirmacao(int id)
         {

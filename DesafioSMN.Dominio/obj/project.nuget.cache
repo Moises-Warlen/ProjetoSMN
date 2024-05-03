@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SZLBpE9QFCLrWzqR0j13hsZm8v9UTpJtZIabC43lmQBZyjj1jZgTiib6q8P1+wAu/TgMnKxkRgKu0ml30vc8rw==",
+  "dgSpecHash": "FehKz9tsAehHrekGw2R49htDQAixNBbBwNqzmdLOcca127Q9V7GkOv/7GYA4eDV8dUPOPAhE7B2BMjfyUGSAEw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Moises\\Desktop\\moises\\DesafioSMN\\DesafioSMN.Dominio\\DesafioSMN.Dominio.csproj",
+  "projectFilePath": "C:\\Users\\Moises\\Documents\\ProjetoSMN\\DesafioSMN.Dominio\\DesafioSMN.Dominio.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
