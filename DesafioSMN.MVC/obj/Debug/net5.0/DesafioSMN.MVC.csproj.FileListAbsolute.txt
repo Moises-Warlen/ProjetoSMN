@@ -3907,8 +3907,10 @@ C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\Microsoft.E
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\Microsoft.Identity.Client.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
@@ -3920,6 +3922,7 @@ C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\System.Conf
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\System.Runtime.Caching.dll
+C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.resources.dll
@@ -4005,6 +4008,3 @@ C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\obj\Debug\net5.0\DesafioSMN.
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\obj\Debug\net5.0\ref\DesafioSMN.MVC.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\obj\Debug\net5.0\DesafioSMN.MVC.pdb
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\obj\Debug\net5.0\DesafioSMN.MVC.genruntimeconfig.cache
-C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
-C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll

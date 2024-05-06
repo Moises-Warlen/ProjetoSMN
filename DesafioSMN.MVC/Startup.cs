@@ -31,7 +31,6 @@ namespace DesafioSMN.MVC
                 options => options.UseSqlServer(Configuration.GetConnectionString("DataBase")));
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddSingleton<EmailService>();
 
             services.AddScoped<ITarefaRepositorio , TarefaRepositorio>();
             services.AddScoped<IFuncionarioRepositorio, FuncionarioRepositorio>();
