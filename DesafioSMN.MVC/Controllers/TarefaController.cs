@@ -1,4 +1,5 @@
 ﻿using DesafioSMN.Dominio.Enums;
+using DesafioSMN.Dominio.Model;
 using DesafioSMN.Infra.Data;
 using DesafioSMN.Infra.Repositorio;
 using DesafioSMN.MVC.Filters;
@@ -13,6 +14,8 @@ namespace DesafioSMN.MVC.Controllers
     [PaginaParafuncionarioLogado]
     public class TarefaController : Controller
     {
+        private readonly EmailService _emailService;
+
 
         private readonly BancoContext _context;
         private readonly ISessao _sessao;
@@ -23,8 +26,10 @@ namespace DesafioSMN.MVC.Controllers
         private readonly IFuncionarioRepositorio _funcionarioRepositorio;
 
         private readonly ITarefaRepositorio _tarefaRepositorio;
-        public TarefaController(BancoContext context, ISessao sessao, ITarefaRepositorio tarefaRepositorio , IFuncionarioRepositorio funcionarioRepositorio)
+        public TarefaController(BancoContext context, ISessao sessao, ITarefaRepositorio tarefaRepositorio , IFuncionarioRepositorio funcionarioRepositorio, EmailService emailService)
         {
+
+            _emailService = emailService;
 
             _context = context;
             _sessao = sessao;
@@ -32,6 +37,9 @@ namespace DesafioSMN.MVC.Controllers
             _tarefaRepositorio = tarefaRepositorio;
             _funcionarioRepositorio = funcionarioRepositorio;
         }
+
+    
+
         public IActionResult Index()
         {
 
@@ -123,6 +131,12 @@ namespace DesafioSMN.MVC.Controllers
         [HttpPost]
         public IActionResult Criar(TarefaModel tarefa)
         {
+
+            var subject = "Nova tarefa atribuída";
+            var body = $"Você foi atribuído a uma nova tarefa: {tarefa.Descricao}";
+            _emailService.SendEmail(tarefa.Responsavel, subject, body);
+
+
             _tarefaRepositorio.Adicionar(tarefa);
             return RedirectToAction("Index");
 

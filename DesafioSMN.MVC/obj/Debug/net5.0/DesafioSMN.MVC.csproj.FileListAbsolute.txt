@@ -3694,7 +3694,6 @@ C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\Micros
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\Microsoft.CSharp.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\Microsoft.Extensions.Caching.Abstractions.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Binder.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.CommandLine.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.dll
@@ -3732,7 +3731,6 @@ C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\Micros
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.DataAnnotations.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.dll
-C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\Microsoft.Extensions.Primitives.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\Microsoft.Extensions.WebEncoders.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\Microsoft.JSInterop.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\Microsoft.Net.Http.Headers.dll
@@ -3831,7 +3829,6 @@ C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\System
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\System.Resources.Reader.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\System.Resources.ResourceManager.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\System.Resources.Writer.dll
-C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\System.Runtime.CompilerServices.VisualC.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\System.Runtime.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\refs\System.Runtime.Extensions.dll
@@ -4008,3 +4005,6 @@ C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\obj\Debug\net5.0\DesafioSMN.
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\obj\Debug\net5.0\ref\DesafioSMN.MVC.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\obj\Debug\net5.0\DesafioSMN.MVC.pdb
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\obj\Debug\net5.0\DesafioSMN.MVC.genruntimeconfig.cache
+C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.MVC\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll

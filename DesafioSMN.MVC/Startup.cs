@@ -1,3 +1,4 @@
+using DesafioSMN.Dominio.Model;
 using DesafioSMN.Infra.Data;
 using DesafioSMN.Infra.Repositorio;
 using DesafioSMN.MVC.Helper;
@@ -30,6 +31,7 @@ namespace DesafioSMN.MVC
                 options => options.UseSqlServer(Configuration.GetConnectionString("DataBase")));
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddSingleton<EmailService>();
 
             services.AddScoped<ITarefaRepositorio , TarefaRepositorio>();
             services.AddScoped<IFuncionarioRepositorio, FuncionarioRepositorio>();
