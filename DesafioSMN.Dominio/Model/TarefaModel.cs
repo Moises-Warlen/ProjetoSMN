@@ -12,6 +12,8 @@ namespace DesafioSMN.MVC.Models
         public DateTime DataAtribuicao { get; set; } = DateTime.Now;
         public DateTime? DataConclusao { get; set; }
         public List<FuncionarioModel> Funcionarios { get; set; }
+        public int? FuncionarioId { get; set; } // relacionamento com  funcionario
+        public FuncionarioModel Funcionario { get; set; }// relacinamento com  funcionario
 
     }
 }

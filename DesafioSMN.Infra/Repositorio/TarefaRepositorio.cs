@@ -39,9 +39,9 @@ namespace DesafioSMN.Infra.Repositorio
         {
             return _bancoContext.Tarefas.FirstOrDefault(x => x.Id ==id);
         }
-        public List<TarefaModel> BuscarTodos()
+        public List<TarefaModel> BuscarTodos(int funcionarioId)
         {
-            return _bancoContext.Tarefas.ToList();
+            return _bancoContext.Tarefas.Where(x => x.FuncionarioId == funcionarioId).ToList();
            
         }
         public TarefaModel Adicionar(TarefaModel tarefa)

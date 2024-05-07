@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DesafioSMN.Infra.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    [Migration("20240430203716_CriandoDB_AjustandoAsTabelas")]
-    partial class CriandoDB_AjustandoAsTabelas
+    [Migration("20240507175614_CriandoRelacionamento")]
+    partial class CriandoRelacionamento
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -46,6 +46,9 @@ namespace DesafioSMN.Infra.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("FuncionarioModelId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("Gestor_FuncionarioId")
                         .HasColumnType("int");
 
@@ -69,6 +72,8 @@ namespace DesafioSMN.Infra.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("FuncionarioModelId");
+
                     b.HasIndex("TarefaModelId");
 
                     b.ToTable("Funcionarios");
@@ -90,19 +95,42 @@ namespace DesafioSMN.Infra.Migrations
                     b.Property<string>("Descricao")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("FuncionarioId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Responsavel")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("FuncionarioId");
 
                     b.ToTable("Tarefas");
                 });
 
             modelBuilder.Entity("DesafioSMN.Dominio.Model.FuncionarioModel", b =>
                 {
+                    b.HasOne("DesafioSMN.Dominio.Model.FuncionarioModel", null)
+                        .WithMany("Funcionarios")
+                        .HasForeignKey("FuncionarioModelId");
+
                     b.HasOne("DesafioSMN.MVC.Models.TarefaModel", null)
                         .WithMany("Funcionarios")
                         .HasForeignKey("TarefaModelId");
+                });
+
+            modelBuilder.Entity("DesafioSMN.MVC.Models.TarefaModel", b =>
+                {
+                    b.HasOne("DesafioSMN.Dominio.Model.FuncionarioModel", "Funcionario")
+                        .WithMany()
+                        .HasForeignKey("FuncionarioId");
+
+                    b.Navigation("Funcionario");
+                });
+
+            modelBuilder.Entity("DesafioSMN.Dominio.Model.FuncionarioModel", b =>
+                {
+                    b.Navigation("Funcionarios");
                 });
 
             modelBuilder.Entity("DesafioSMN.MVC.Models.TarefaModel", b =>

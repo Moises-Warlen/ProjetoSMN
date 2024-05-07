@@ -1,5 +1,6 @@
 ﻿using DesafioSMN.Dominio.Enums;
 using System;
+using System.Collections.Generic;
 
 namespace DesafioSMN.Dominio.Model
 {
@@ -39,6 +40,7 @@ namespace DesafioSMN.Dominio.Model
         public string Cidade { get; set; }
         public string Cep { get; set; }
         public int? Gestor_FuncionarioId { get; set; }
+        public virtual List<FuncionarioModel>Funcionarios { get; set; }// relacioamento com a tarefa
 
         public bool SenhaValida( string senha) {
 

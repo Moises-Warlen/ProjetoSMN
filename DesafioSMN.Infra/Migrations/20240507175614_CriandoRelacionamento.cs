@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DesafioSMN.Infra.Migrations
 {
-    public partial class CriandoDB_AjustandoAsTabelas : Migration
+    public partial class CriandoRelacionamento : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,7 +16,8 @@ namespace DesafioSMN.Infra.Migrations
                     Responsavel = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Descricao = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DataAtribuicao = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DataConclusao = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    DataConclusao = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    FuncionarioId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -41,11 +42,18 @@ namespace DesafioSMN.Infra.Migrations
                     Cidade = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Cep = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Gestor_FuncionarioId = table.Column<int>(type: "int", nullable: true),
+                    FuncionarioModelId = table.Column<int>(type: "int", nullable: true),
                     TarefaModelId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Funcionarios", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Funcionarios_Funcionarios_FuncionarioModelId",
+                        column: x => x.FuncionarioModelId,
+                        principalTable: "Funcionarios",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Funcionarios_Tarefas_TarefaModelId",
                         column: x => x.TarefaModelId,
@@ -55,18 +63,40 @@ namespace DesafioSMN.Infra.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Funcionarios_FuncionarioModelId",
+                table: "Funcionarios",
+                column: "FuncionarioModelId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Funcionarios_TarefaModelId",
                 table: "Funcionarios",
                 column: "TarefaModelId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Tarefas_FuncionarioId",
+                table: "Tarefas",
+                column: "FuncionarioId");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Tarefas_Funcionarios_FuncionarioId",
+                table: "Tarefas",
+                column: "FuncionarioId",
+                principalTable: "Funcionarios",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Restrict);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Funcionarios");
+            migrationBuilder.DropForeignKey(
+                name: "FK_Funcionarios_Tarefas_TarefaModelId",
+                table: "Funcionarios");
 
             migrationBuilder.DropTable(
                 name: "Tarefas");
+
+            migrationBuilder.DropTable(
+                name: "Funcionarios");
         }
     }
 }
