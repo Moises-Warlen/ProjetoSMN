@@ -94,22 +94,33 @@ namespace DesafioSMN.MVC.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    _tarefaRepositorio.Adicionar(tarefa);
-                    TempData["MensagenSucesso"] = "Contato cadastrado com sucesso";
-                    return RedirectToAction("Index");
+                    // Obtém o ID do usuário logado
+                    var funcionarioLogado = _sessao.BuscarSessaoDoFuncionario();
+                    if (funcionarioLogado != null)
+                    {
+                        // Define o ID do usuário logado como o criador da tarefa
+                        tarefa.CriadorId = funcionarioLogado.Id;
 
+                        // Adiciona a tarefa ao repositório
+                        _tarefaRepositorio.Adicionar(tarefa);
+                        TempData["MensagenSucesso"] = "Tarefa cadastrada com sucesso";
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        TempData["MensagenErro"] = "Não foi possível encontrar o funcionário logado.";
+                        return RedirectToAction("Index");
+                    }
                 }
                 return View(tarefa);
-
             }
-            catch(System.Exception erro)
+            catch (System.Exception erro)
             {
-                TempData["MensagenErro"] = $"Ops, não foi possivel cadastrar  sua tarefa, detalhe do erro : {erro.Message}";
+                TempData["MensagenErro"] = $"Ops, não foi possível cadastrar sua tarefa, detalhe do erro: {erro.Message}";
                 return RedirectToAction("Index");
-
             }
-
         }
+
         [HttpPost]
         public IActionResult Alterar(TarefaModel tarefa)
         {

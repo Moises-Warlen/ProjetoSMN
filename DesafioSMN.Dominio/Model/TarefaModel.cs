@@ -14,6 +14,7 @@ namespace DesafioSMN.MVC.Models
         public List<FuncionarioModel> Funcionarios { get; set; }
         public int? FuncionarioId { get; set; } // relacionamento com  funcionario
         public FuncionarioModel Funcionario { get; set; }// relacinamento com  funcionario
-
+        public int CriadorId { get; set; }
+        
     }
 }
