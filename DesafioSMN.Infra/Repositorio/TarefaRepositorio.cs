@@ -1,5 +1,6 @@
 ﻿using DesafioSMN.Infra.Data;
 using DesafioSMN.MVC.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -51,6 +52,15 @@ namespace DesafioSMN.Infra.Repositorio
 
             return tarefa;
         }
-       
+
+        public List<TarefaModel> ObterTarefasComFuncionarios()
+        {
+            // Realiza um INNER JOIN entre Tarefas e Funcionarios para obter as tarefas com os funcionários associados
+            var tarefasComFuncionarios = _bancoContext.Tarefas
+                .Include(t => t.Funcionario) // Carrega o funcionário associado a cada tarefa
+                .ToList();
+
+            return tarefasComFuncionarios;
+        }
     }
 }

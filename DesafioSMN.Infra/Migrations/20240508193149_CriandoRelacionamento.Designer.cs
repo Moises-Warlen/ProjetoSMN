@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DesafioSMN.Infra.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    [Migration("20240507175614_CriandoRelacionamento")]
+    [Migration("20240508193149_CriandoRelacionamento")]
     partial class CriandoRelacionamento
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -85,6 +85,9 @@ namespace DesafioSMN.Infra.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CriadorId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("DataAtribuicao")
                         .HasColumnType("datetime2");

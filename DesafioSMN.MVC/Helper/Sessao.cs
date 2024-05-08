@@ -12,7 +12,6 @@ namespace DesafioSMN.MVC.Helper
         {
             _httpContext = httpContext;
         }
-
         public FuncionarioModel BuscarSessaoDoFuncionario()
         {
             string sessaoFuncionario = _httpContext.HttpContext.Session.GetString("sessaoFuncionarioLogado");
@@ -21,14 +20,12 @@ namespace DesafioSMN.MVC.Helper
             
                 return JsonConvert.DeserializeObject<FuncionarioModel>(sessaoFuncionario);
         }
-
         public void CriarSessaoDoFuncionario(FuncionarioModel funcionario)
         {
             string valor = JsonConvert.SerializeObject(funcionario);
 
             _httpContext.HttpContext.Session.SetString("sessaoFuncionarioLogado", valor );
         }
-
         public void RemoverSessaoDoFuncionario()
         {
             _httpContext.HttpContext.Session.Remove("sessaoFuncionarioLogado");

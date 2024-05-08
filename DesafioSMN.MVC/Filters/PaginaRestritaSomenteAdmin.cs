@@ -10,7 +10,6 @@ namespace DesafioSMN.MVC.Filters
 {
     public class PaginaRestritaSomenteAdmin : ActionFilterAttribute
     {
-
         public override void OnActionExecuted(ActionExecutedContext context)
         {
             string sessaoFuncionario = context.HttpContext.Session.GetString("sessaoFuncionarioLogado");

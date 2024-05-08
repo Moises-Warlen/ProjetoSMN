@@ -17,7 +17,8 @@ namespace DesafioSMN.Infra.Migrations
                     Descricao = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DataAtribuicao = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DataConclusao = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    FuncionarioId = table.Column<int>(type: "int", nullable: true)
+                    FuncionarioId = table.Column<int>(type: "int", nullable: true),
+                    CriadorId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

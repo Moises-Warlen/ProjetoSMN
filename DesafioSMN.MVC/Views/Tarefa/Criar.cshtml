@@ -10,11 +10,11 @@
 
 <form asp-controller="Tarefa" asp-action="Criar" method="post" data-id="">
     <div class="mb-3">
-        <select asp-for="Responsavel" class="form-control">
+        <select asp-for="FuncionarioId" class="form-control">
             <option value="0">Selecione o Responsável</option>
             @foreach (var funcionario in Model.Funcionarios)
             {
-                <option value="@funcionario.Nome">@funcionario.Nome</option>
+                <option value="@funcionario.Id">@funcionario.Nome</option>
 
             }
         </select>

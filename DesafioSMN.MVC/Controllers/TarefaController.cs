@@ -5,6 +5,7 @@ using DesafioSMN.MVC.Filters;
 using DesafioSMN.MVC.Helper;
 using DesafioSMN.MVC.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -19,16 +20,13 @@ namespace DesafioSMN.MVC.Controllers
         private readonly ITarefaRepositorio _tarefaRepositorio;
         public TarefaController(BancoContext context, ISessao sessao, ITarefaRepositorio tarefaRepositorio , IFuncionarioRepositorio funcionarioRepositorio)
         {
-
             _context = context;
             _sessao = sessao;
-
             _tarefaRepositorio = tarefaRepositorio;
             _funcionarioRepositorio = funcionarioRepositorio;
         }
         public IActionResult Index()
         {
-
             // Verifica se o funcionário está logado
             var funcionarioLogado = _sessao.BuscarSessaoDoFuncionario();
             if (funcionarioLogado == null)
@@ -41,14 +39,18 @@ namespace DesafioSMN.MVC.Controllers
             if (funcionarioLogado.Perfil != PerfilEmun.Admin)
             {
                 // Obtém as tarefas do funcionário logado que não é um administrador
-                var tarefa = _context.Tarefas.Where(t => t.Responsavel == funcionarioLogado.Nome).ToList();
+                List<TarefaModel> tarefasDoFuncionario = _context.Tarefas
+                    .Where(t => t.FuncionarioId == funcionarioLogado.Id)
+                    .Include(t => t.Funcionario) // Carrega o funcionário associado a cada tarefa
+                    .ToList();
 
-                return View(tarefa);
+                return View(tarefasDoFuncionario);
             }
 
             // Se o funcionário for um administrador, exibe todas as tarefas
-            var todasTarefas = _context.Tarefas.ToList();
-
+            List<TarefaModel> todasTarefas = _context.Tarefas
+                .Include(t => t.Funcionario) // Carrega o funcionário associado a cada tarefa
+                .ToList();
             return View(todasTarefas);
 
             //FuncionarioModel funcionarioLogado  = _sessao.BuscarSessaoDoFuncionario();

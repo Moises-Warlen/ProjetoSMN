@@ -9,6 +9,7 @@ namespace DesafioSMN.Infra.Repositorio
         List<TarefaModel> BuscarTodos(int funcionarioid);
         TarefaModel Adicionar(TarefaModel tarefa);
         TarefaModel Atualizar(TarefaModel tarefa);
+        List<TarefaModel> ObterTarefasComFuncionarios();
         bool Apagar(int id);
     }
 }

@@ -1,10 +1,7 @@
 ﻿using DesafioSMN.Dominio.Model;
 using DesafioSMN.Infra.Data;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DesafioSMN.Infra.Repositorio
 {
@@ -34,7 +31,6 @@ namespace DesafioSMN.Infra.Repositorio
             _context.SaveChanges();
             return funcionario;
         }
-
         public FuncionarioModel Atualizar(FuncionarioModel funcionario)
         {
 

@@ -10,8 +10,6 @@ namespace DesafioSMN.MVC.Controllers
     {
         private readonly IFuncionarioRepositorio _funcionarioRepositorio;
         private readonly ISessao _sessao;
-
-
        public LoginController(IFuncionarioRepositorio funcionarioRepositorio ,
            ISessao sessao)
         {
@@ -33,11 +31,9 @@ namespace DesafioSMN.MVC.Controllers
             return View();
         }
 
-
         [HttpPost]
         public IActionResult Entrar(LoginModel loginModel )
         {
-
             try
             {
                 if (ModelState.IsValid)

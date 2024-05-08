@@ -1,5 +1,4 @@
-﻿
-using DesafioSMN.MVC.Models;
+﻿using DesafioSMN.MVC.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
