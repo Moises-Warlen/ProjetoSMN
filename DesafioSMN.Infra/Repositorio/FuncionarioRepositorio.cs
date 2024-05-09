@@ -64,5 +64,10 @@ namespace DesafioSMN.Infra.Repositorio
             _context.SaveChanges();
             return true;
         }
+
+        public FuncionarioModel ListarPorId(int id)
+        {
+            return _context.Funcionarios.FirstOrDefault(x => x.Id == id);
+        }
     }
 }

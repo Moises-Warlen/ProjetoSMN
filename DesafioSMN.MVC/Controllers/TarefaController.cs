@@ -18,12 +18,14 @@ namespace DesafioSMN.MVC.Controllers
         private readonly ISessao _sessao;
         private readonly IFuncionarioRepositorio _funcionarioRepositorio;
         private readonly ITarefaRepositorio _tarefaRepositorio;
-        public TarefaController(BancoContext context, ISessao sessao, ITarefaRepositorio tarefaRepositorio , IFuncionarioRepositorio funcionarioRepositorio)
+        private readonly IEmail _email;
+        public TarefaController(BancoContext context, ISessao sessao, ITarefaRepositorio tarefaRepositorio , IFuncionarioRepositorio funcionarioRepositorio, IEmail email)
         {
             _context = context;
             _sessao = sessao;
             _tarefaRepositorio = tarefaRepositorio;
             _funcionarioRepositorio = funcionarioRepositorio;
+            _email = email;
         }
         public IActionResult Index()
         {
@@ -34,7 +36,7 @@ namespace DesafioSMN.MVC.Controllers
                 // Redireciona para a página de login se o funcionário não estiver logado
                 return RedirectToAction("Index", "Login");
             }
-
+            
             // Verifica se o funcionário não é um administrador
             if (funcionarioLogado.Perfil != PerfilEmun.Admin)
             {
@@ -96,21 +98,39 @@ namespace DesafioSMN.MVC.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    // Obtém o ID do usuário logado
                     var funcionarioLogado = _sessao.BuscarSessaoDoFuncionario();
                     if (funcionarioLogado != null)
                     {
-                        // Define o ID do usuário logado como o criador da tarefa
                         tarefa.CriadorId = funcionarioLogado.Id;
-
-                        // Adiciona a tarefa ao repositório
                         _tarefaRepositorio.Adicionar(tarefa);
-                        TempData["MensagenSucesso"] = "Tarefa cadastrada com sucesso";
+
+                        // Verifica se FuncionarioId tem valor antes de buscar
+                        if (tarefa.FuncionarioId.HasValue)
+                        {
+                            // Converte int? para int para chamar o método ListarPorId
+                            int funcionarioId = tarefa.FuncionarioId.Value;
+                            var funcionarioTarefa = _funcionarioRepositorio.ListarPorId(funcionarioId);
+                            if (funcionarioTarefa != null)
+                            {
+                                // Envio de email para o funcionário associado à tarefa
+                                string assunto = "Nova Tarefa Criada";
+                                string mensagem = $"Uma nova tarefa foi criada para você. Detalhes: {tarefa.Descricao}";
+                                _email.Enviar(funcionarioTarefa.Email, assunto, mensagem);
+                            }
+                            else
+                            {
+                                //  não é possível encontrar o funcionário associado à tarefa
+                                TempData["MensagemErro"] = "Não foi possível encontrar o funcionário associado à tarefa.";
+                                return RedirectToAction("Index");
+                            }
+                        }
+
+                        TempData["MensagemSucesso"] = "Tarefa cadastrada com sucesso";
                         return RedirectToAction("Index");
                     }
                     else
                     {
-                        TempData["MensagenErro"] = "Não foi possível encontrar o funcionário logado.";
+                        TempData["MensagemErro"] = "Não foi possível encontrar o funcionário logado.";
                         return RedirectToAction("Index");
                     }
                 }
@@ -118,7 +138,7 @@ namespace DesafioSMN.MVC.Controllers
             }
             catch (System.Exception erro)
             {
-                TempData["MensagenErro"] = $"Ops, não foi possível cadastrar sua tarefa, detalhe do erro: {erro.Message}";
+                TempData["MensagemErro"] = $"Ops, não foi possível cadastrar sua tarefa, detalhe do erro: {erro.Message}";
                 return RedirectToAction("Index");
             }
         }

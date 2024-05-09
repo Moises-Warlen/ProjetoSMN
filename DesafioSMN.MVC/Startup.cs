@@ -1,4 +1,3 @@
-using DesafioSMN.Dominio.Model;
 using DesafioSMN.Infra.Data;
 using DesafioSMN.Infra.Repositorio;
 using DesafioSMN.MVC.Helper;
@@ -35,6 +34,8 @@ namespace DesafioSMN.MVC
             services.AddScoped<ITarefaRepositorio , TarefaRepositorio>();
             services.AddScoped<IFuncionarioRepositorio, FuncionarioRepositorio>();
             services.AddScoped<ISessao, Sessao>();
+            services.AddScoped<IEmail, Email>();
+
 
             services.AddSession(o =>
             {
