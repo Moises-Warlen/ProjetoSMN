@@ -36,7 +36,9 @@ namespace DesafioSMN.MVC.Controllers
                 // Redireciona para a página de login se o funcionário não estiver logado
                 return RedirectToAction("Index", "Login");
             }
-            
+            // Passa para a View se o funcionário é um administrador ou não
+            ViewData["FuncionarioAdministrador"] = funcionarioLogado.Perfil == PerfilEmun.Admin;
+
             // Verifica se o funcionário não é um administrador
             if (funcionarioLogado.Perfil != PerfilEmun.Admin)
             {
