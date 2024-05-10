@@ -178,11 +178,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Moises\\Documents\\ProjetoSMN\\DesafioSMN.Dominio\\DesafioSMN.Dominio.csproj",
+      "projectUniqueName": "D:\\ProjetoSMN\\DesafioSMN.Dominio\\DesafioSMN.Dominio.csproj",
       "projectName": "DesafioSMN.Dominio",
-      "projectPath": "C:\\Users\\Moises\\Documents\\ProjetoSMN\\DesafioSMN.Dominio\\DesafioSMN.Dominio.csproj",
+      "projectPath": "D:\\ProjetoSMN\\DesafioSMN.Dominio\\DesafioSMN.Dominio.csproj",
       "packagesPath": "C:\\Users\\Moises\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Moises\\Documents\\ProjetoSMN\\DesafioSMN.Dominio\\obj\\",
+      "outputPath": "D:\\ProjetoSMN\\DesafioSMN.Dominio\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

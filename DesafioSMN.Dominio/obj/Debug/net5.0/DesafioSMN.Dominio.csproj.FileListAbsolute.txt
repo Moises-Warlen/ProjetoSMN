@@ -105,3 +105,15 @@ C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.Dominio\obj\Debug\net5.0\Desafio
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.Dominio\obj\Debug\net5.0\DesafioSMN.Dominio.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.Dominio\obj\Debug\net5.0\ref\DesafioSMN.Dominio.dll
 C:\Users\Moises\Documents\ProjetoSMN\DesafioSMN.Dominio\obj\Debug\net5.0\DesafioSMN.Dominio.pdb
+D:\ProjetoSMN\DesafioSMN.Dominio\bin\Debug\net5.0\DesafioSMN.Dominio.deps.json
+D:\ProjetoSMN\DesafioSMN.Dominio\bin\Debug\net5.0\DesafioSMN.Dominio.dll
+D:\ProjetoSMN\DesafioSMN.Dominio\bin\Debug\net5.0\ref\DesafioSMN.Dominio.dll
+D:\ProjetoSMN\DesafioSMN.Dominio\bin\Debug\net5.0\DesafioSMN.Dominio.pdb
+D:\ProjetoSMN\DesafioSMN.Dominio\obj\Debug\net5.0\DesafioSMN.Dominio.csproj.AssemblyReference.cache
+D:\ProjetoSMN\DesafioSMN.Dominio\obj\Debug\net5.0\DesafioSMN.Dominio.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProjetoSMN\DesafioSMN.Dominio\obj\Debug\net5.0\DesafioSMN.Dominio.AssemblyInfoInputs.cache
+D:\ProjetoSMN\DesafioSMN.Dominio\obj\Debug\net5.0\DesafioSMN.Dominio.AssemblyInfo.cs
+D:\ProjetoSMN\DesafioSMN.Dominio\obj\Debug\net5.0\DesafioSMN.Dominio.csproj.CoreCompileInputs.cache
+D:\ProjetoSMN\DesafioSMN.Dominio\obj\Debug\net5.0\DesafioSMN.Dominio.dll
+D:\ProjetoSMN\DesafioSMN.Dominio\obj\Debug\net5.0\ref\DesafioSMN.Dominio.dll
+D:\ProjetoSMN\DesafioSMN.Dominio\obj\Debug\net5.0\DesafioSMN.Dominio.pdb

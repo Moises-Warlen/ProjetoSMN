@@ -12,6 +12,7 @@
 <form asp-controller="Tarefa" asp-action="Alterar" method="post" data-id="">
 
     <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="CriadorId" />
     <div class="mb-3">
 
 
@@ -30,13 +31,13 @@
             <p>Não há funcionários disponíveis.</p>
         }
         @*<select asp-for="Responsavel" class="form-control">
-            <option value="0">Selecione o Responsável</option>
-            @foreach (var funcionario in Model.Funcionarios)
-            {
-                <option value="@funcionario.Nome">@funcionario.Nome</option>
+                <option value="0">Selecione o Responsável</option>
+                @foreach (var funcionario in Model.Funcionarios)
+                {
+                    <option value="@funcionario.Nome">@funcionario.Nome</option>
 
-            }
-        </select>*@
+                }
+            </select>*@
     </div>
     <div class="mb-3">
         <label for="descricao" class="form-label">Descrição da tarefa</label>

@@ -6408,11 +6408,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Moises\\Documents\\ProjetoSMN\\DesafioSMN.MVC\\DesafioSMN.MVC.csproj",
+      "projectUniqueName": "D:\\ProjetoSMN\\DesafioSMN.MVC\\DesafioSMN.MVC.csproj",
       "projectName": "DesafioSMN.MVC",
-      "projectPath": "C:\\Users\\Moises\\Documents\\ProjetoSMN\\DesafioSMN.MVC\\DesafioSMN.MVC.csproj",
+      "projectPath": "D:\\ProjetoSMN\\DesafioSMN.MVC\\DesafioSMN.MVC.csproj",
       "packagesPath": "C:\\Users\\Moises\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Moises\\Documents\\ProjetoSMN\\DesafioSMN.MVC\\obj\\",
+      "outputPath": "D:\\ProjetoSMN\\DesafioSMN.MVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6432,11 +6432,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Moises\\Documents\\ProjetoSMN\\DesafioSMN.Dominio\\DesafioSMN.Dominio.csproj": {
-              "projectPath": "C:\\Users\\Moises\\Documents\\ProjetoSMN\\DesafioSMN.Dominio\\DesafioSMN.Dominio.csproj"
+            "D:\\ProjetoSMN\\DesafioSMN.Dominio\\DesafioSMN.Dominio.csproj": {
+              "projectPath": "D:\\ProjetoSMN\\DesafioSMN.Dominio\\DesafioSMN.Dominio.csproj"
             },
-            "C:\\Users\\Moises\\Documents\\ProjetoSMN\\DesafioSMN.Infra\\DesafioSMN.Infra.csproj": {
-              "projectPath": "C:\\Users\\Moises\\Documents\\ProjetoSMN\\DesafioSMN.Infra\\DesafioSMN.Infra.csproj"
+            "D:\\ProjetoSMN\\DesafioSMN.Infra\\DesafioSMN.Infra.csproj": {
+              "projectPath": "D:\\ProjetoSMN\\DesafioSMN.Infra\\DesafioSMN.Infra.csproj"
             }
           }
         }

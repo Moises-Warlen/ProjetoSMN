@@ -147,8 +147,51 @@ namespace DesafioSMN.MVC.Controllers
         public IActionResult Alterar(TarefaModel tarefa)
         {
 
-            _tarefaRepositorio.Atualizar(tarefa);
-            return RedirectToAction("Index");
+            try
+            {
+                var funcionarioLogado = _sessao.BuscarSessaoDoFuncionario();
+                if (funcionarioLogado != null)
+                {
+                    // Verifica se o editor é diferente do criador
+                    if (tarefa.CriadorId != funcionarioLogado.Id)
+                    {
+                        // Obtém o criador da tarefa
+                        var criador = _funcionarioRepositorio.ListarPorId(tarefa.CriadorId);
+                        if (criador != null)
+                        {
+                            // Envia o e-mail para o criador da tarefa
+                            string assunto = "Tarefa Concluida";
+                            string mensagem = $"A tarefa que você criou foi Concluida. Detalhes: {tarefa.Descricao}";
+                            _email.Enviar(criador.Email, assunto, mensagem);
+                        }
+                        else
+                        {
+                            // Não foi possível encontrar o criador da tarefa
+                            TempData["MensagemErro"] = "Não foi possível encontrar o criador da tarefa.";
+                            return RedirectToAction("Index");
+                        }
+                    }
+                }
+                else
+                {
+                    TempData["MensagemErro"] = "Não foi possível encontrar o funcionário logado.";
+                    return RedirectToAction("Index");
+                }
+
+                // Atualiza a tarefa
+                _tarefaRepositorio.Atualizar(tarefa);
+                return RedirectToAction("Index");
+            }
+            catch (System.Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops, não foi possível editar sua tarefa, detalhe do erro: {erro.Message}";
+                return RedirectToAction("Index");
+            }
+
+
+
+            //_tarefaRepositorio.Atualizar(tarefa);
+            //return RedirectToAction("Index");
         }
        
     }
