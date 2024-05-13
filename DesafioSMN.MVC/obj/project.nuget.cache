@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8dNPVPbYPRcZMc1iSol5Ibk6ygDt+uj+o7xglllCSSWcmCzaDpyfYMmsATfR3sFNOC91uz5zLtkqiJJLJ79l0g==",
+  "dgSpecHash": "ditTY+uJ+HnAyyfKvjdUrU86fcGFJ98eT1LwlDhQk5aAfbk8neQIfAQz7oFKvzAyjiUMdBGHdX3/Q4rcTVTG4w==",
   "success": true,
-  "projectFilePath": "D:\\ProjetoSMN\\DesafioSMN.MVC\\DesafioSMN.MVC.csproj",
+  "projectFilePath": "C:\\Users\\Moises\\Documents\\ProjetoSMN\\DesafioSMN.MVC\\DesafioSMN.MVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Moises\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Moises\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\5.0.10\\microsoft.aspnetcore.mvc.razor.extensions.5.0.10.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iynk/A1bzxXY722y7gd8cuiCByK9XRvxxOI/UlGRSSADIgxzuzXLUIKzY1KOcSR1scwtvXVAEMzSTcrpgDVZlg==",
+  "dgSpecHash": "uLai2CI2KZSNeviTTUPsQjQLCXF6v/Stn6cBiWbtspWThoPgm3Ouo8AZR0c5JL+ZPlNPGvVOS2/pTRrAEB/Uog==",
   "success": true,
-  "projectFilePath": "D:\\ProjetoSMN\\DesafioSMN.Dominio\\DesafioSMN.Dominio.csproj",
+  "projectFilePath": "C:\\Users\\Moises\\Documents\\ProjetoSMN\\DesafioSMN.Dominio\\DesafioSMN.Dominio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Moises\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Moises\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",

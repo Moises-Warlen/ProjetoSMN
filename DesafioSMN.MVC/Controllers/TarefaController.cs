@@ -189,11 +189,6 @@ namespace DesafioSMN.MVC.Controllers
                 TempData["MensagemErro"] = $"Ops, não foi possível editar sua tarefa, detalhe do erro: {erro.Message}";
                 return RedirectToAction("Index");
             }
-
-
-
-            //_tarefaRepositorio.Atualizar(tarefa);
-            //return RedirectToAction("Index");
         }
        
     }
