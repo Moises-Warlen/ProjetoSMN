@@ -1,0 +1,8 @@
+1 -  para acessar o sistema e nessesario ter o sqlserver instalado
+     fazer o restore do arquivo que se encontra na pasta data-base
+
+2 -  abrir o projeto com  o visual studio e startar o projeto 
+     fazer o login com o email oportunidades@smn.com.br
+     e senha teste123
+
+
